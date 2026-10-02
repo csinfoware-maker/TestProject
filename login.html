@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1020;
+      color: #fff;
+      overflow: hidden;
+    }
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .35;
+      pointer-events: none;
+    }
+    body::before { background: #6d5dfc; top: -140px; left: -120px; }
+    body::after { background: #00c2ff; right: -140px; bottom: -160px; }
+
+    .card {
+      width: min(92%, 430px);
+      padding: 42px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      background: rgba(17, 24, 45, .72);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+    .brand {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      margin-bottom: 26px;
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #7c6cff, #19cfff);
+      box-shadow: 0 10px 30px rgba(74, 117, 255, .3);
+    }
+    h1 { margin: 0 0 8px; font-size: 32px; letter-spacing: -.8px; }
+    .subtitle { margin: 0 0 30px; color: #9ba5bd; font-size: 15px; }
+
+    label {
+      display: block;
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #cbd2e3;
+    }
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 13px;
+      outline: none;
+      color: #fff;
+      background: rgba(255,255,255,.055);
+      transition: .2s ease;
+      font-size: 15px;
+    }
+    input:focus {
+      border-color: #6d7cff;
+      box-shadow: 0 0 0 4px rgba(109,124,255,.12);
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2px 0 24px;
+      font-size: 13px;
+    }
+    .remember { display: flex; align-items: center; gap: 8px; color: #aeb7ca; }
+    .remember input { width: auto; margin: 0; accent-color: #7568ff; }
+    a { color: #8f9cff; text-decoration: none; }
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 13px;
+      padding: 14px;
+      color: #fff;
+      background: linear-gradient(135deg, #7064ff, #20bdf5);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(54, 113, 255, .25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(54, 113, 255, .34); }
+    .signup { margin: 24px 0 0; text-align: center; color: #8f99ad; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">✦</div>
+    <h1>Welcome back</h1>
+    <p class="subtitle">Sign in to continue to your account.</p>
+
+    <form>
+      <label for="email">Email address</label>
+      <input id="email" type="email" placeholder="you@example.com">
+
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter your password">
+
+      <div class="row">
+        <label class="remember"><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="button">Sign in</button>
+    </form>
+
+    <p class="signup">Don't have an account? <a href="#">Create account</a></p>
+  </main>
+</body>
+</html>
